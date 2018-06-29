@@ -6,7 +6,7 @@ function getMissingElement(array) {
         mod = element;
       }
       return element < array[index + 1];
-    } else if( index > 0) {
+    } else if (index > 0) {
       return true;
     } else {
       return false;
