@@ -5,28 +5,28 @@
  */
 
 
-//Twój komentarz ...
+//definicja funkcji jeden
 function jeden() {
 
-    //Twój komentarz ...
+//definicja zmeinnej
     var zmienna1 = 1;
 
-    //Twój komentarz ...
+    //funkcja zagnieżdżona
     function dwa() {
-
-        //Twój komentarz ...
+        //logowanie zmiennej1 lokalnej dla funkcji jeden()
         console.log(zmienna1);
-
-        //Twój komentarz ...
+        //definicja zmiennej lokalnej zmienna2 dla funkcji dwa()
         var zmienna2 = 3;
     }
 
-    //Twój komentarz ...
+    //wywolanie funkcji zagnieżdżonej dwa()
     dwa();
 
-    //Twój komentarz ...
-    console.log(zmienna2)
+    //logowanie zmienna2 ktora nie istnieje
+    //nie istnieje bo jest zagnieżdżona w funkcji wewnętrznej
+    // nie istnieje poza tą funkcją
+    // console.log(zmienna2)
 }
 
-//Twój komentarz ...
+//wywolanie funckjia
 jeden()
