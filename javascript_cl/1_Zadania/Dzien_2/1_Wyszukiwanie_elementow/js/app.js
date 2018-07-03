@@ -7,8 +7,9 @@ document.addEventListener("DOMContentLoaded", function(){
   for(i = 0; i<classes.length; i++) {
     console.log(classes[i]);
   }
-  var dives = document.
+  var dives = document.quertSele;
 
+sdasdl;
     /*
 
     Poniżej napisz kod rozwiązujący zadania
