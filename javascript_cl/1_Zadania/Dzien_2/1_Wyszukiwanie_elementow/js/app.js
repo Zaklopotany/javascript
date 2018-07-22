@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log("zadanie czwarte");
 
   var zad4_1 = (document.querySelector("nav")).querySelectorAll("li");
-  console.log(zad4_1[0]);
+  console.log("zadanie 4.1 " + zad4_1[0]);
   console.log(zad4_1.length);
 
   var divs1 = document.querySelectorAll("div");
@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   for (i = 0; i < divs.length; i++) {
     var ps = divs1[i].querySelectorAll("p");
-    console.log("psss " + ps.length);
     if (ps.length > 0) {
       empty.push.apply(empty, ps);
     }
@@ -54,7 +53,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var article1 = document.getElementsByTagName("article");
   article1 = article1[0].getElementsByTagName("div");
-  console.log(article1);
+  console.log("articles " + article1 + " " + article1.length);
+
+
+  //Zadanie dodatkowe
+
+  console.log("Zadanie dodatkowe ");
+  var all_li = (document.querySelector("nav")).querySelectorAll("li");
+  all_li.forEach(function(element, index, array) {
+    if (!element.hasAttribute("data-direction")) {
+      element.setAttribute("data-direction", "top")
+    }
+  });
+  console.log(all_li);
+
 
 
 
