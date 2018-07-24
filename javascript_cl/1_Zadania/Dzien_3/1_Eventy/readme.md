@@ -38,7 +38,7 @@ Pamiętaj, żeby wszystko pisać w evencie ```DOMContentLoaded```.
 Na stronie znajduje się guzik.  
 1. Podepnij do niego event, który na kliknięcie spowoduje, że w konsoli wyświetli się napis:  
    `Hura! Działa!`
-  
+
 Pamiętaj, żeby wszystko pisać w evencie ```DOMContentLoaded```.
 
 #### Zadanie 4
@@ -61,7 +61,7 @@ Pamiętaj, żeby wszystko pisać w evencie ```DOMContentLoaded```.
 Na stronie znajdują się trzy elementy **div**.
 1. Napisz wspólny event zmieniający kolor tła **tylko** w klikniętym **divie**.  
    Użyj do tego słowa kluczowego ```this```.
-   
+
 Pamiętaj, żeby wszystko pisać w evencie ```DOMContentLoaded```.
 
 **Hint**:
