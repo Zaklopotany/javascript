@@ -2,52 +2,56 @@ document.addEventListener("DOMContentLoaded", function() {
   // &#10004
   var cardNum = document.querySelector("#card");
   var validation = document.querySelector("#type");
-  console.log(validation);
 
-  cardNum.addEventListener("keypress", function(event) {
-    if (this.value.length < 1) {
-      switch (event.keyCode) {
-        case 52:
-          validation.innerHTML = "VISA";
-          break;
-        case 53:
-          validation.innerHTML = "MASTERCARD";
-          break;
-        default:
-          validation.innerHTML = "?"
-          break;
-      }
-    } else {
-      if (this.value.substring(0, 2) == "34" || this.value.substring(0, 2) == "37") {
-        validation.innerHTML = "AMERICANEXPRESS";
-      }
-      switch (validation.innerHTML) {
-        case "VISA":
-          if (this.value.length <= 15 && this.value.length >= 12) {
-            validation.innerHTML = validation.innerHTML + " &#10004";
-          }
-          break;
-        case "MASTERCARD":
-          if (this.value.length >= 15 && this.value.length < 17) {
-            validation.innerHTML = validation.innerHTML + " &#10004";
-          }
+  function validate_first(regex, string) {
+    var reg = new RegExp(regex);
+    return reg.test(string);
+  }
 
-          break;
-        case "AMERICANEXPRESS":
-          if (this.value.length >= 14 && this.value.length < 16) {
-            validation.innerHTML = validation.innerHTML + " &#10004";
-          }
-          break;
-        case "?":
-          break;
-        default:
-          if(validation.innerHTML != "?") {
-            if(this.value.length > 15) {
-              validation.innerHTML = validation.innerHTML.split(" ").shift();
-            }
-          }
-          break;
+  function validate_length(from, to, value) {
+    console.log("length validation");
+    var reg = new RegExp("^([0-9]{" + from + "," + to + "})$");
+    return reg.test(value);
+  }
+
+  cardNum.addEventListener("input", function(event) {
+    var americanexpress = "^([3]{1}[4,7]{1})";
+    var masercard = "^([5]{1})";
+    var visa = "^([4]{1})";
+
+    if (validate_first(americanexpress, this.value)) {
+      console.log("americanexpress validation");
+
+      if (validate_length(15, 15, this.value)) {
+        validation.innerHTML = "AMERICANEXPRESS &#10004";
+      } else {
+        validation.innerHTML = "AMERICANEXPRESS"
       }
+      return;
     }
+    if (validate_first(masercard, this.value)) {
+      console.log("Mastercard validation");
+      if (validate_length(16, 16, this.value)) {
+        validation.innerHTML = "Mastercard &#10004";
+      } else {
+        validation.innerHTML = "Mastercard";
+      }
+      return;
+    }
+
+    if (validate_first(visa, this.value)) {
+      console.log("visa validation");
+
+      if (validate_length(13, 16, this.value)) {
+        validation.innerHTML = "Visa &#10004";
+      } else {
+        validation.innerHTML = "Visa";
+      }
+      return;
+    }
+
+    validation.innerHTML = "Unknown";
+
+
   })
 })
