@@ -27,31 +27,25 @@ document.addEventListener("DOMContentLoaded", function() {
       } else {
         validation.innerHTML = "AMERICANEXPRESS"
       }
-      return;
-    }
-    if (validate_first(masercard, this.value)) {
+    } else if (validate_first(masercard, this.value)) {
       console.log("Mastercard validation");
+
       if (validate_length(16, 16, this.value)) {
         validation.innerHTML = "Mastercard &#10004";
       } else {
         validation.innerHTML = "Mastercard";
       }
-      return;
-    }
 
-    if (validate_first(visa, this.value)) {
+    } else if (validate_first(visa, this.value)) {
       console.log("visa validation");
-
+      
       if (validate_length(13, 16, this.value)) {
         validation.innerHTML = "Visa &#10004";
       } else {
         validation.innerHTML = "Visa";
       }
-      return;
+    } else {
+      validation.innerHTML = "Unknown";
     }
-
-    validation.innerHTML = "Unknown";
-
-
   })
 })
