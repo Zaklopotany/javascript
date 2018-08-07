@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     } else if (validate_first(visa, this.value)) {
       console.log("visa validation");
-      
+
       if (validate_length(13, 16, this.value)) {
         validation.innerHTML = "Visa &#10004";
       } else {
