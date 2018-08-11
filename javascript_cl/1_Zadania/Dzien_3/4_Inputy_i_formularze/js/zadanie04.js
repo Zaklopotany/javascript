@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   var select = document.querySelector('select');
-  var button = document.querySelector('button');
+
+   var button = document.querySelector('button');
 
   button.addEventListener("click", function(e) {
     e.preventDefault();
@@ -8,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
       switch (select.selectedIndex) {
         case 0:
           hideImages(e, "windows")
-          console.log("co to ");
           break;
         case 1:
           hideImages(e, "apple");
