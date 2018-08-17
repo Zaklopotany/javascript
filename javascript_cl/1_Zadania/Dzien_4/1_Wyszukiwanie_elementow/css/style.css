@@ -12,6 +12,13 @@
   background-color: yellow;
 }
 
+.redLinks {
+  color: red;
+}
+.bigFont {
+  font-size: 50px ;
+}
+
 /*Style do zadania 5 */
 .creepyHeader {
     color:silver;

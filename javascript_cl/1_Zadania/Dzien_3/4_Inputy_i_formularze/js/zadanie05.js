@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+
+  //check how much does it take to compute both methods
   document.querySelector("button").addEventListener('click', function(e) {
     var check = Array.from(document.querySelectorAll("input")).every(function(e, i, a) {
       switch (i) {
