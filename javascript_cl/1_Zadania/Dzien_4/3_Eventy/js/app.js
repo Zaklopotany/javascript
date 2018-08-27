@@ -23,6 +23,42 @@ $(function() {
     buttons.off();
   });
 
-  //zadanie 2
+  //zadanie 3
+
+  var dt = $("dt", $("section.superhero-description")); //.find("dt");
+  var dds = $("dd", $("section.superhero-description"));
+  dds.hide();
+  dt.on('click', function() {
+    var dd = $(this).next();
+    dd.toggle();
+  })
+
+  //zadanie 4
+  var form = $("form.login");
+  var button = form.find(".show-hide-btn");
+  console.log(button);
+  button.on('click', function(e) {
+    e.preventDefault();
+    form.find("input").each(function(e, i) {
+      if ($(this).attr("type") == "password") {
+        $(this).attr("type", "text");
+      } else {
+        $(this).attr("type", "password");
+      }
+    })
+  });
+
+  var menuChildren = $(".menu").children();
+  menuChildren.on('mouseover', function() {
+    console.log("Hura element " + this.innerHTML);
+  })
+
+  var inputs = $(".login").find("input");
+  inputs.on('click', function() {
+    $(this).css("box-shadow","5px 10px green");
+  })
+  inputs.on('mouseleave', function() {
+    $(this).css("background-color", "grey");
+  })
 
 })

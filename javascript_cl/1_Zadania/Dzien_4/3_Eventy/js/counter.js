@@ -8,8 +8,8 @@ $(function() {
       event.preventDefault();
       this.value = this.value.substring(0, 100);
     }
-    
-    counter[0].innerHTML = this.value.length + "/100";
+
+    counter.text(this.value.length + "/100");
 
     if (length < 33) {
       $(counter).css("color", "green");
